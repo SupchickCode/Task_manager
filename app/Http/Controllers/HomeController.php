@@ -25,8 +25,9 @@ class HomeController extends Controller
     {
         $var_for_render = [
             'user' => auth()->user(),
-            'tables' => auth()->user()->tables()->get()
+            'tables' => auth()->user()->tables()->latest()->get()
         ];
+        
         return view('home', compact('var_for_render'));
     }
 }

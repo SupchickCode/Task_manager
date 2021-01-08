@@ -31,6 +31,6 @@ class Table extends Model
 
     public function tasks()
     {
-        return $this->hasMany(Task::class, 'task_id');
+        return $this->hasMany(Task::class, 'table_id');
     }
 }

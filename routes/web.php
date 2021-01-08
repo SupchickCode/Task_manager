@@ -19,5 +19,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('table/{user_name}/{tabel_id}', [\App\Http\Controllers\TableController::class , 'view_table'])->name('view_table');
-Route::post('/create_table', [\App\Http\Controllers\TableController::class, 'create_table'])->name('create_table');
+# Table routes
+Route::get('table/{user_name}/{table_id}', [\App\Http\Controllers\TableController::class , 'view_table'])->name('view_table');
+Route::post('/create/table', [\App\Http\Controllers\TableController::class, 'create_table'])->name('create_table');
+Route::post('/delete/table/{table_id}', [\App\Http\Controllers\TableController::class, 'delete_table'])->name('delete_table');
+
+# Task routes
+Route::post('create/task/to/{table_id}', [\App\Http\Controllers\TaskController::class, 'create_task'])->name('create_task');

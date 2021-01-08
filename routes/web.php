@@ -26,3 +26,6 @@ Route::post('/delete/table/{table_id}', [\App\Http\Controllers\TableController::
 
 # Task routes
 Route::post('create/task/to/{table_id}', [\App\Http\Controllers\TaskController::class, 'create_task'])->name('create_task');
+Route::post('add/task/to/{task_id}', [\App\Http\Controllers\TaskController::class, 'add_text_task'])->name('add_text_task');
+Route::post('remove/task/{task_id}', [\App\Http\Controllers\TaskController::class, 'remove_task'])->name('remove_task');
+Route::post('done/task/{task_id}', [\App\Http\Controllers\TaskController::class, 'done_task'])->name('done_task');
